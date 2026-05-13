@@ -1,6 +1,5 @@
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
-    {{- partial "extend_footer.html" . }}
     {{- if not site.Params.footer.hideCopyright }}
         {{- if site.Copyright }}
         <span>{{ site.Copyright | markdownify }}</span>
@@ -22,6 +21,11 @@
         - Support us by sponsoring the project on GitHub Sponsors: https://github.com/sponsors/adityatelange
     */}}
     
+    <span>
+        {{- partial "extend_footer.html" . }}
+        {{- print " · "}}
+    </span>
+
     <span>
         Powered by
         <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
